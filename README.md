@@ -33,3 +33,13 @@ Advanced Example:
 		String res = "{\"a\":\"b\",\"c\":\"Hello World!\"}";
 		Assert.assertEquals(res, sw.toString());
 ```
+
+Json Path implementation:
+```
+	JsonMap jm = JsonMapReaderLib.read(store, om);
+	
+	JPath p = new JPath("$.store.book[*].author");
+	
+	JsonMap res = p.apply(jm);
+```
+A complete set of [tests](http://github.com/adlerHTE/dynamicJson/blob/master/src/test/java/com/adler/test/JsonPathTest.java) is based on http://goessner.net/articles/JsonPath/ 
